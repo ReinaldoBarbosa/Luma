@@ -1,4 +1,4 @@
-# Luma Education 🎓🦊
+# Luma 🎓🦊
 
 **Luma** é uma plataforma acadêmica desenvolvida em **Python**, com foco em:
 - Gerenciamento de alunos, professores, turmas e atividades.
@@ -34,7 +34,7 @@
 
 ## 📂 Estrutura do Projeto
 ```
-📦 luma-education
+📦 luma
 ├── app.py                # Arquivo principal
 ├── api/                  # Rotas e lógica de negócio
 ├── ui/                   # Interfaces gráficas
@@ -49,7 +49,7 @@
 ## ⚙️ Como Executar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/luma-education.git
+   git clone https://github.com/seu-usuario/luma.git
    cd luma-education
    ```
 
