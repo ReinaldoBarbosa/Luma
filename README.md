@@ -49,8 +49,8 @@
 ## ⚙️ Como Executar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/luma.git
-   cd luma-education
+   git clone https://github.com/ReinaldoBarbosa/Luma.git
+   cd Luma
    ```
 
 2. Crie e ative um ambiente virtual:
