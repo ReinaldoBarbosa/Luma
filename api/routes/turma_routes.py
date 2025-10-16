@@ -76,10 +76,10 @@ def buscar_turma(turma_id):
         print(f"Erro ao buscar turma: {e}")
         return jsonify({"error": "Erro ao buscar turma."}), 500
 
-@turma_bp.route('/professor/<int:professor_id>', methods=['GET'])
-def listar_turmas_professor(professor_id):
+@turma_bp.route('/professor/<int:turma_id>', methods=['GET'])
+def listar_turmas_professor(turma_id):
     try:
-        turmas = get_turmas_by_professor(professor_id)
+        turmas = get_turmas_by_professor(turma_id)
         return jsonify([dict(turma) for turma in turmas]), 200
     except Exception as e:
         print(f"Erro ao listar turmas do professor: {e}")
