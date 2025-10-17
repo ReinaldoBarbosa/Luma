@@ -17,13 +17,10 @@ def get_all_relatório():
     return [dict(relatório) for relatório in relatório]
 
 
-def add_relatório(nome, professor_id, status):
+def add_relatório(usuario_id, media_geral, total_atividades, data_geracao):
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO relatório (nome, professor_id, status) VALUES (?, ?, ?)",
-        (nome, professor_id, status)
-    )
+    cursor.execute("INSERT INTO relatório (usuario_id, media_geral, total_atividades, data_geracao) VALUES (?, ?, ?, ?)",(usuario_id, media_geral, total_atividades, data_geracao))
     conn.commit()
     conn.close()
 
@@ -36,11 +33,10 @@ def delete_relatório(relatório_id):
     conn.close()
 
 
-def update_relatório(relatório_id, nome, professor_id, status):
+def update_relatório(usuario_id, media_geral, total_atividades, data_geracao):
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("UPDATE relatório SET nome = ?, professor_id = ?, status = ? WHERE id = ?",
-                   (nome, professor_id, status, relatório_id))
+    cursor.execute("UPDATE relatório SET usuario_id = ?, media_geral = ?, total_atividades = ?, data_geracao = ? WHERE id = ?",(usuario_id, media_geral, total_atividades, data_geracao))
     conn.commit()
     conn.close()
 
@@ -54,10 +50,4 @@ def get_relatório_by_id(relatório_id):
     return relatório
 
 
-def get_relatório_by_professor(professor_id):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM relatório WHERE professor_id = ?", (professor_id,))
-    relatório = cursor.fetchall()
-    conn.close()
-    return relatório
+

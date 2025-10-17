@@ -13,9 +13,9 @@ def get_all_notas():
     conn.close()
     return [dict(notas) for notas in notas]
 
-def add_notas(nome, ra, email, senha, nivel, status):
+def add_notas(usuario_id, atividade_id, nota):
     conn = get_db_connection()
-    conn.execute('INSERT INTO notas (nome, ra, email, senha, nivel, status) VALUES (?, ?, ?, ?, ?, ?)', (nome, ra, email, senha, nivel, status))
+    conn.execute('INSERT INTO notas (usuario_id, atividade_id, nota) VALUES (?, ?, ?)', (usuario_id, atividade_id, nota))
     conn.commit()
     conn.close()
 
@@ -25,9 +25,9 @@ def delete_notas(notas_id):
     conn.commit()
     conn.close()
 
-def update_notas(nome, ra, email, senha, nivel, usuario_id):
+def update_notas(usuario_id, atividade_id, nota):
     conn = get_db_connection()
-    conn.execute('UPDATE notas SET nome = ?, ra = ?, email = ?, senha = ?, nivel = ? WHERE id = ?', (nome, ra, email, senha, nivel, usuario_id))
+    conn.execute('UPDATE notas SET usuario_id = ?, atividade_id = ?, nota = ?, WHERE id = ?', (usuario_id, atividade_id, nota))
     conn.commit()
     conn.close()
 
