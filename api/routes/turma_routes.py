@@ -83,5 +83,24 @@ def listar_turmas_professor(turma_id):
         return jsonify([dict(turma) for turma in turmas]), 200
     except Exception as e:
         print(f"Erro ao listar turmas do professor: {e}")
-        return jsonify({"error": "Erro ao listar turmas do professor."}), 500            
+        return jsonify({"error": "Erro ao listar turmas do professor."}), 500         
+
+@turma_bp.route('/add/aluno/<int:turma_id>', methods=['POST'])
+def adicionar_aluno_turma(turma_id):
+    try:
+        data = request.get_json()
+        aluno_id = data.get('aluno_id')
+
+        if not aluno_id:
+            return jsonify({"error": "ID do aluno é obrigatório."}), 400
+
+        # Lógica para adicionar o aluno à turma
+
+        
+        # Exemplo: add_aluno_to_turma(turma_id, aluno_id)
+
+        return jsonify({"message": "Aluno adicionado à turma com sucesso."}), 200
+    except Exception as e:
+        print(f"Erro ao adicionar aluno à turma: {e}")
+        return jsonify({"error": "Erro ao adicionar aluno à turma."}), 500
          

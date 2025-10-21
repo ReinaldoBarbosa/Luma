@@ -71,17 +71,6 @@ def init_db():
         )
     ''')
     
-    # Criar tabela de Recomendações
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS recomendacoes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            usuario_id INTEGER NOT NULL,
-            recomendacao TEXT NOT NULL,
-            data_criacao DATE DEFAULT CURRENT_DATE,
-            FOREIGN KEY (usuario_id) REFERENCES usuario (id)
-        )
-    ''')
-
     # Criar tabela de Turma_Aluno (relação muitos-para-muitos entre turmas e alunos)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS turma_aluno (
@@ -109,5 +98,7 @@ def init_db():
             FOREIGN KEY (aluno_id) REFERENCES usuario(id)
         )
     ''')
+
+    
     conn.commit()
     conn.close()
