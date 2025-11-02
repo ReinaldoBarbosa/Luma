@@ -1,0 +1,19 @@
+# --- Framework principal ---
+flask
+
+# --- IA e variáveis de ambiente ---
+openai
+python-dotenv
+
+# --- Comunicação entre front e back ---
+requests
+
+# --- Relatórios e geração de PDF ---
+reportlab
+
+# --- Interface e entrada de dados ---
+keyboard
+
+# --- (Opcional, mas recomendado para boas práticas) ---
+black
+pylint
