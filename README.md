@@ -67,7 +67,7 @@
 
 4. Execute o sistema:
    ```bash
-   python app.py
+   python start.py
    ```
 
 ---
