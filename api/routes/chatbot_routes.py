@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from api.utils.chatbot_openai import enviar_mensagem
+
 
 chatbot_bp = Blueprint("chatbot", __name__)
 
@@ -12,10 +12,11 @@ def chat():
         data = request.get_json()
         mensagem = data.get("mensagem", "")
 
+        resposta = "ok"
         if not mensagem:
             return jsonify({"error": "Mensagem vazia"}), 400
 
-        resposta = enviar_mensagem(mensagem, historico)
+        #resposta = enviar_mensagem(mensagem, historico)
         return jsonify({"resposta": resposta}), 200
     except Exception as e:
         print("❌ Erro no chatbot:", e)
