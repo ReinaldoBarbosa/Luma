@@ -3,6 +3,7 @@ from front_end.cla_nota import ver_notas_aluno
 from front_end.cla_usuario import listar_usuarios, criar_usuario
 from front_end.cla_turma import listar_turmas_front, criar_turma_front, listar_turmas_aluno_front
 from front_end.cla_relatorio import gerar_relatorio_cli
+from front_end.cla_chatbot import iniciar_chatbot as chatbot
 
 def menu_principal(usuario):
 
@@ -55,7 +56,7 @@ def menu_principal(usuario):
             print("\n=== Menu Principal - Aluno ===")
             print("1️⃣  Listar minhas turmas")
             print("2️⃣  Ver notas")
-            print("3️⃣  Chatbot (em breve)")
+            print("3️⃣  Chatbot")
             print("0️⃣  Sair")
             opc = input("Escolha: ")
 
@@ -65,8 +66,7 @@ def menu_principal(usuario):
                ver_notas_aluno(usuario['id'])
                print("Função de ver atividades ainda não implementada!") 
             elif opc == "3":
-               #chatbot()
-               print("Função de chatbot ainda não implementada!")   
+               chatbot()      
             elif opc == "0":
                 print("Encerrando o sistema...")
                 break
