@@ -69,6 +69,10 @@
    ```bash
    python start.py
    ```
+5. Se for rodar a ia:
+ ```bash
+   Por favor pedir a chave de acesso ao proprietário do codigo 
+   ```
 
 ---
 
